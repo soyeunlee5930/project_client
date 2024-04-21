@@ -1,0 +1,82 @@
+.login {
+  width: 100%;
+  margin: 0 auto;
+
+  .loginForm {
+    max-width: 1600px;
+
+    .userLogin {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      .login {
+        width: 400px;
+        text-align: center;
+        padding: 40px 40px;
+        box-shadow: 2px 2px 10px 2px #ededed;
+        border-radius: 10px;
+
+        .logoTitle {
+          font-size: 25px;
+          margin-bottom: 40px;
+        }
+
+        .logo {
+          width: 50%;
+          margin: auto;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .subText {
+          margin: 25px auto 40px;
+          font-size: 16px;
+          text-align: center;
+          line-height: 1.5;
+        }
+
+        .btnKakaoLogin {
+          margin-bottom: 16px;
+          background-color: #fee500;
+          border-radius: 12px;
+          cursor: pointer;
+
+          .btnInner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 20px;
+            width: 100%;
+            outline: none;
+            color: #3a211f;
+            text-decoration: none;
+            font-size: 17px;
+            line-height: 17px;
+
+            .iconWrapper {
+              flex-shrink: 0;
+              margin-right: 10px;
+
+              img {
+                display: block;
+                width: 100%;
+              }
+            }
+
+            .loginText {
+              flex-grow: 1;
+              text-align: center;
+              font-weight: 500;
+              color: rgba(0, 0, 0, 0.85);
+            }
+          }
+        }
+      }
+    }
+  }
+}

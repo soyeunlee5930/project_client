@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 const Main = () => {
-  const [msg, setMsg] = useState('');
+  const accessToken = localStorage.getItem('accessToken');
+  console.log('accessToken : ', accessToken);
 
-  useEffect(() => {
-    fetch('/clients/userpage')
-      .then(res => res.text())
-      .then(message => setMsg(message))
-      .catch(error => console.error('Error fetching message:', error));
-  }, []);
-  return <div className="main">{msg}</div>;
+  return (
+    <div className="main">
+      <p>메인페이지입니다.</p>
+    </div>
+  );
 };
 
 export default Main;

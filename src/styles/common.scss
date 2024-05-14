@@ -20,6 +20,13 @@
   z-index: 1000;
 }
 
+#footer {
+  margin-top: 0;
+  padding: 0;
+  border-top: 1px solid darkgray;
+  background: #fff;
+}
+
 ​img[src$='.gif'],
 img[src$='.png'] {
   image-rendering: -moz-crisp-edges; /* Firefox */

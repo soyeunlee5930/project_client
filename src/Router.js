@@ -3,6 +3,7 @@ import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import KakaoLogin from './components/KakaoLogin/kakaoLogin';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const Router = () => {
   const isLogin = !!localStorage.getItem('accessToken');
@@ -21,6 +22,7 @@ const Router = () => {
           element={isLogin ? <Navigate to="/" /> : <KakaoLogin />}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

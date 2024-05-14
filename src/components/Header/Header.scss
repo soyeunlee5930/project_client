@@ -5,6 +5,8 @@
 
   .inner {
     position: relative;
+    padding: 0 40px;
+    max-width: 1600px;
     z-index: 100;
     background-color: #fff;
 
@@ -13,8 +15,6 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      padding: 0 40px;
-      max-width: 1600px;
       height: 80px;
       font-size: 13px;
       font-weight: 400;

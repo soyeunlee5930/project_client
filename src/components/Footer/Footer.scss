@@ -1,104 +1,107 @@
 .footer {
-  .infoBox {
-    max-width: 1600px;
+  .inner {
     padding: 0 40px;
-    margin: 0 auto;
+    max-width: 1600px;
 
-    .companyInfo {
-      display: flex;
-      padding: 5% 0;
-      border-bottom: 1px solid darkgray;
+    .infoBox {
+      margin: 0 auto;
 
-      .company {
-        margin: 0 auto 0 0;
+      .companyInfo {
+        display: flex;
+        padding: 5% 0;
+        border-bottom: 1px solid darkgray;
 
-        img {
-          display: block;
-          width: 180px;
-        }
+        .company {
+          margin: 0 auto 0 0;
 
-        .footerInfo {
-          margin-top: 24px;
-
-          li {
-            display: inline-block;
-            margin-right: 16px;
-            margin-bottom: 8px;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 20px;
-            color: #6a6a6a;
-          }
-
-          .block {
+          img {
             display: block;
+            width: 180px;
           }
 
-          .copy {
+          .footerInfo {
             margin-top: 24px;
-            margin-right: 0;
-            margin-bottom: 0;
-            font-size: 15px;
-          }
-        }
-      }
 
-      div {
-        margin-left: 7.5%;
-      }
-
-      .cs,
-      .bank,
-      .board {
-        .footerTitle {
-          font-size: 13px;
-          font-weight: 400;
-          line-height: 20px;
-          color: #1a1a1a;
-        }
-
-        .footerInfo {
-          margin-top: 24px;
-
-          .phoneNumber {
-            color: #1a1a1a;
-          }
-
-          li {
-            margin-bottom: 8px;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 20px;
-            color: #6a6a6a;
-
-            a {
+            li {
+              display: inline-block;
+              margin-right: 16px;
+              margin-bottom: 8px;
               font-size: 13px;
               font-weight: 400;
               line-height: 20px;
               color: #6a6a6a;
             }
+
+            .block {
+              display: block;
+            }
+
+            .copy {
+              margin-top: 24px;
+              margin-right: 0;
+              margin-bottom: 0;
+              font-size: 15px;
+            }
+          }
+        }
+
+        div {
+          margin-left: 7.5%;
+        }
+
+        .cs,
+        .bank,
+        .board {
+          .footerTitle {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #1a1a1a;
+          }
+
+          .footerInfo {
+            margin-top: 24px;
+
+            .phoneNumber {
+              color: #1a1a1a;
+            }
+
+            li {
+              margin-bottom: 8px;
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 20px;
+              color: #6a6a6a;
+
+              a {
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #6a6a6a;
+              }
+            }
           }
         }
       }
-    }
 
-    .about {
-      display: flex;
-      justify-content: space-between;
-      padding: 1.5% 0 5%;
+      .about {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5% 0 5%;
 
-      .footerLink {
-        margin: 0 -12px;
+        .footerLink {
+          margin: 0 -12px;
 
-        li {
-          display: inline-block;
-          margin: 0 12px;
+          li {
+            display: inline-block;
+            margin: 0 12px;
 
-          a {
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 24px;
-            color: #6a6a6a;
+            a {
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 24px;
+              color: #6a6a6a;
+            }
           }
         }
       }

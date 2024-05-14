@@ -3,7 +3,6 @@ import './Main.scss';
 
 const Main = () => {
   const accessToken = localStorage.getItem('accessToken');
-  console.log('accessToken : ', accessToken);
 
   return (
     <div className="main">

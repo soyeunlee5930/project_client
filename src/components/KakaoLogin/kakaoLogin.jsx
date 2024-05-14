@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 
 const KakaoLogin = () => {
   const [searchParams] = useSearchParams();
-  const [userName, setUserName] = useState();
+  const [id, setId] = useState();
 
   // 인가코드 가져와서 변수에 담기
   const code = searchParams.get('code');
@@ -27,7 +27,7 @@ const KakaoLogin = () => {
           return res.json();
         })
         .then(data => {
-          setUserName(data.name);
+          setId(data.id);
           navigate('/');
         })
         .catch(error => {

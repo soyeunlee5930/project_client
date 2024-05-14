@@ -7,6 +7,19 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+.section {
+  width: 1600px;
+}
+
+#header {
+  position: relative;
+  margin-top: 0px;
+  padding: 0;
+  height: auto;
+  transition: none;
+  z-index: 1000;
+}
+
 ​img[src$='.gif'],
 img[src$='.png'] {
   image-rendering: -moz-crisp-edges; /* Firefox */
@@ -14,4 +27,9 @@ img[src$='.png'] {
   image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }

@@ -9,7 +9,7 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
@@ -20,7 +20,6 @@ const Router = () => {
           path="/oauth2/login/kakao"
           element={isLogin ? <Navigate to="/" /> : <KakaoLogin />}
         />
-        <Route path="/header" element={<Header />} />
       </Routes>
     </BrowserRouter>
   );

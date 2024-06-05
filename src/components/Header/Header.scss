@@ -1,12 +1,15 @@
 .header {
-  // border-bottom: 1px solid red;
-  border: 0;
+  position: relative;
+  padding: 0;
+  transition: none;
+  height: auto;
+  border-bottom: 1px solid #e6e6e6;
+  // border: 0;
+  z-index: 1001;
   background-color: #fff;
 
   .inner {
     position: relative;
-    padding: 0 40px;
-    max-width: 1600px;
     z-index: 100;
     background-color: #fff;
 
@@ -15,6 +18,9 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+      margin: 0 auto;
+      padding: 0 40px;
+      max-width: 1600px;
       height: 80px;
       font-size: 13px;
       font-weight: 400;

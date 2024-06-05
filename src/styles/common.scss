@@ -7,8 +7,16 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-.section {
-  width: 1600px;
+body {
+  position: relative;
+  height: 100%;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  min-width: 370px;
+  min-height: 550px;
 }
 
 #header {
@@ -23,7 +31,7 @@
 #footer {
   margin-top: 0;
   padding: 0;
-  border-top: 1px solid darkgray;
+  border-top: 1px solid #e6e6e6;
   background: #fff;
 }
 

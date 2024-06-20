@@ -240,7 +240,56 @@ const Main = () => {
           </div>
         </section>
         <section className="productSection2">
-          <div>1</div>
+          <div className="textBox">
+            <div className="textInner">
+              <div className="text1">Celebrity Information</div>
+              <div className="text2">
+                <Link to="#">more</Link>
+              </div>
+            </div>
+          </div>
+          <div className="bannerBox">
+            <Link to="#">
+              <picture>
+                <img src="/images/bannerImage1.jpg" alt="images" />
+              </picture>
+            </Link>
+          </div>
+        </section>
+        <section className="productSection3">
+          <div className="bannerBox">
+            <Link to="#">
+              <picture>
+                <img src="/images/bannerImage2.jpg" alt="images" />
+              </picture>
+            </Link>
+          </div>
+          <div className="textBox">
+            <div className="textInner">
+              <div className="text1">Celebrity Information</div>
+              <div className="text2">
+                <Link to="#">more</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="mainBanner">
+          <div className="textBanner">
+            <div className="text1">
+              Radiant Glimmer
+              <span className="type1"> </span>
+              온라인 스토어
+              <span className="type2" />
+              회원 가입하시고
+              <span className="type1"> </span>
+              다양한
+              <span className="type1"> </span>
+              혜택을 만나세요.
+            </div>
+            <div className="text2">
+              <Link to="#">Sign up now</Link>
+            </div>
+          </div>
         </section>
       </div>
     </div>

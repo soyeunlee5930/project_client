@@ -1,9 +1,11 @@
+@import '../../styles/colors.scss';
+
 .header {
   position: relative;
   padding: 0;
   transition: none;
   height: auto;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid $border-gray2;
   // border: 0;
   z-index: 1001;
   background-color: #fff;
@@ -76,7 +78,7 @@
               width: 150px;
               height: 95px;
               opacity: 0;
-              border: 1px solid darkgray;
+              border: 1px solid $border-gray;
               background: #fff;
               text-align: left;
 
@@ -106,7 +108,7 @@
               width: 150px;
               height: 95px;
               opacity: 1;
-              border: 1px solid darkgray;
+              border: 1px solid $border-gray;
               background: #fff;
               text-align: left;
             }
@@ -155,7 +157,7 @@
                 padding: 16px 0;
                 width: 152px;
                 height: auto;
-                border: 1px solid darkgray;
+                border: 1px solid $border-gray;
                 background-color: #fff;
 
                 li {
@@ -169,7 +171,7 @@
                     position: relative;
                     font-size: 13px;
                     font-weight: 400;
-                    color: #1a1a1a;
+                    color: $font-black;
                     line-height: 24px;
                     transition: all 0.3s;
                   }
@@ -216,7 +218,7 @@
             left: -16px;
             padding: 16px 0;
             width: 152px;
-            border: 1px solid darkgray;
+            border: 1px solid $border-gray;
             background-color: #fff;
           }
 
@@ -227,7 +229,7 @@
             left: -16px;
             padding: 16px 0;
             width: 152px;
-            border: 1px solid darkgray;
+            border: 1px solid $border-gray;
             background-color: #fff;
 
             li {
@@ -256,7 +258,7 @@
             font-size: 13px;
             font-weight: 400;
             line-height: 24px;
-            color: #1a1a1a;
+            color: $font-black;
           }
         }
 

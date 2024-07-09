@@ -19,11 +19,14 @@
 
       a {
         text-decoration: none;
+        display: block;
 
         img {
           vertical-align: middle;
           width: 100%;
           max-width: 100%;
+          height: auto;
+          aspect-ratio: 1 / 1; /* 정사각형 비율 설정 */
         }
       }
 

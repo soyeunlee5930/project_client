@@ -10,19 +10,26 @@ import './Main.scss';
 
 const Main = () => {
   const [productList, setProductList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const pageSize = 4;
+
   const accessToken = localStorage.getItem('accessToken');
 
   useEffect(() => {
-    getProductList();
+    getProductList(currentPage);
   }, []);
 
-  const getProductList = () => {
-    fetch(`http://localhost:8080/admins/product-list`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
+  const getProductList = page => {
+    fetch(
+      `http://localhost:8080/admins/products/paginated?page=${page}&size=${pageSize}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
       },
-    })
+    )
       .then(res => {
         console.log(res);
         if (res.ok) {
@@ -33,11 +40,22 @@ const Main = () => {
       })
       .then(data => {
         console.log(data);
-        setProductList(data);
+        setProductList(prevProductList => [
+          ...prevProductList,
+          ...data.products,
+        ]);
+        setCurrentPage(data.currentPage);
+        setTotalPages(data.totalPages);
       })
       .catch(error => {
         console.error('productList를 불러오는데 실패했습니다 :', error.message);
       });
+  };
+
+  const handleLoadMore = () => {
+    if (currentPage < totalPages) {
+      getProductList(currentPage + 1);
+    }
   };
 
   return (
@@ -81,10 +99,10 @@ const Main = () => {
               </ul>
             </div>
             <div className="moreButton">
-              <Link to="#" className="more">
-                More (<span className="currentPage">1</span>/
-                <span className="totalPage">5</span>)
-              </Link>
+              <button className="more" onClick={handleLoadMore}>
+                More (<span className="currentPage">{currentPage}</span>/
+                <span className="totalPage">{totalPages}</span>)
+              </button>
             </div>
           </div>
         </section>

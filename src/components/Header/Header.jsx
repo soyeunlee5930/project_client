@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
+  const [isFixed, setIsFixed] = useState(false);
   const isLogin = !!localStorage.getItem('accessToken');
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleLogout = () => {
     fetch(`${process.env.REACT_APP_LOGOUT_URL_SERVER}`, {
@@ -42,7 +59,7 @@ const Header = () => {
   };
 
   return (
-    <header id="header" className="header">
+    <header id="header" className={`header ${isFixed ? 'fixed' : ''}`}>
       <div className="inner">
         <div className="nav">
           <div className="logoImg">

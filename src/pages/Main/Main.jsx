@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Item from '../../components/Item/Item';
 import './Main.scss';
 
 const Main = () => {
+  const [productList, setProductList] = useState([]);
   const accessToken = localStorage.getItem('accessToken');
+
+  useEffect(() => {
+    getProductList();
+  }, []);
+
+  const getProductList = () => {
+    fetch(`http://localhost:8080/admins/product-list`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+    })
+      .then(res => {
+        console.log(res);
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error('Failed to fetch(getProductList)');
+        }
+      })
+      .then(data => {
+        console.log(data);
+        setProductList(data);
+      })
+      .catch(error => {
+        console.error('productList를 불러오는데 실패했습니다 :', error.message);
+      });
+  };
 
   return (
     <div className="main">
@@ -45,190 +75,9 @@ const Main = () => {
           <div className="productBox">
             <div className="productList">
               <ul className="products">
-                <li className="item">
-                  <div className="productItem">
-                    <div className="thumbnail">
-                      <Link to="#" className="thumbnailLink">
-                        <img src="/images/logo.png" alt="productImage" />
-                      </Link>
-                      <div className="buttonBox">
-                        <span className="cart" />
-                      </div>
-                    </div>
-                    <div className="description">
-                      <div className="name">
-                        <Link to="" className="itemLink">
-                          <span className="itemName">
-                            아이템 이름 목걸이&귀걸이 어쩌구 저쩌구
-                          </span>
-                        </Link>
-                      </div>
-                      <ul className="spec">
-                        <div className="discountRate">5%</div>
-                        <li className="salePrice">
-                          <span>
-                            <span>218,500원</span>
-                          </span>
-                        </li>
-                        <li className="productSummary">
-                          <span>
-                            <span>92.5 SILVER</span>
-                          </span>
-                        </li>
-                        <li className="originalPrice">
-                          <span>
-                            <span>230,000원</span>
-                          </span>
-                        </li>
-                        <li className="color">
-                          <span className="itemColorSpan">
-                            <div className="itemColor">
-                              <span className="colorChips" />
-                            </div>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li className="item">
-                  <div className="productItem">
-                    <div className="thumbnail">
-                      <Link to="#" className="thumbnailLink">
-                        <img src="/images/logo.png" alt="productImage" />
-                      </Link>
-                      <div className="buttonBox">
-                        <span className="cart" />
-                      </div>
-                    </div>
-                    <div className="description">
-                      <div className="name">
-                        <Link to="" className="itemLink">
-                          <span className="itemName">
-                            아이템 이름 목걸이&귀걸이 어쩌구 저쩌구
-                          </span>
-                        </Link>
-                      </div>
-                      <ul className="spec">
-                        <div className="discountRate">5%</div>
-                        <li className="salePrice">
-                          <span>
-                            <span>218,500원</span>
-                          </span>
-                        </li>
-                        <li className="productSummary">
-                          <span>
-                            <span>92.5 SILVER</span>
-                          </span>
-                        </li>
-                        <li className="originalPrice">
-                          <span>
-                            <span>230,000원</span>
-                          </span>
-                        </li>
-                        <li className="color">
-                          <span className="itemColorSpan">
-                            <div className="itemColor">
-                              <span className="colorChips" />
-                            </div>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li className="item">
-                  <div className="productItem">
-                    <div className="thumbnail">
-                      <Link to="#" className="thumbnailLink">
-                        <img src="/images/logo.png" alt="productImage" />
-                      </Link>
-                      <div className="buttonBox">
-                        <span className="cart" />
-                      </div>
-                    </div>
-                    <div className="description">
-                      <div className="name">
-                        <Link to="" className="itemLink">
-                          <span className="itemName">
-                            아이템 이름 목걸이&귀걸이 어쩌구 저쩌구
-                          </span>
-                        </Link>
-                      </div>
-                      <ul className="spec">
-                        <div className="discountRate">5%</div>
-                        <li className="salePrice">
-                          <span>
-                            <span>218,500원</span>
-                          </span>
-                        </li>
-                        <li className="productSummary">
-                          <span>
-                            <span>92.5 SILVER</span>
-                          </span>
-                        </li>
-                        <li className="originalPrice">
-                          <span>
-                            <span>230,000원</span>
-                          </span>
-                        </li>
-                        <li className="color">
-                          <span className="itemColorSpan">
-                            <div className="itemColor">
-                              <span className="colorChips" />
-                            </div>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li className="item">
-                  <div className="productItem">
-                    <div className="thumbnail">
-                      <Link to="#" className="thumbnailLink">
-                        <img src="/images/logo.png" alt="productImage" />
-                      </Link>
-                      <div className="buttonBox">
-                        <span className="cart" />
-                      </div>
-                    </div>
-                    <div className="description">
-                      <div className="name">
-                        <Link to="" className="itemLink">
-                          <span className="itemName">
-                            아이템 이름 목걸이&귀걸이 어쩌구 저쩌구
-                          </span>
-                        </Link>
-                      </div>
-                      <ul className="spec">
-                        <div className="discountRate">5%</div>
-                        <li className="salePrice">
-                          <span>
-                            <span>218,500원</span>
-                          </span>
-                        </li>
-                        <li className="productSummary">
-                          <span>
-                            <span>92.5 SILVER</span>
-                          </span>
-                        </li>
-                        <li className="originalPrice">
-                          <span>
-                            <span>230,000원</span>
-                          </span>
-                        </li>
-                        <li className="color">
-                          <span className="itemColorSpan">
-                            <div className="itemColor">
-                              <span className="colorChips" />
-                            </div>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
+                {productList.map(product => (
+                  <Item key={product.id} product={product} />
+                ))}
               </ul>
             </div>
             <div className="moreButton">
@@ -287,7 +136,7 @@ const Main = () => {
               혜택을 만나세요.
             </div>
             <div className="text2">
-              <Link to="#">Sign up now</Link>
+              <Link to="/login">Sign up now</Link>
             </div>
           </div>
         </section>

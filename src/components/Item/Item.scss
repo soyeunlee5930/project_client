@@ -1,0 +1,200 @@
+@import '../../styles/colors.scss';
+
+.item {
+  display: inline-block;
+  margin: 0 0 18px;
+  margin-bottom: 80px;
+  vertical-align: top;
+  width: 25%;
+  color: $li-gray-75;
+
+  .productItem {
+    margin: 0 8px;
+
+    .thumbnail {
+      position: relative;
+      margin: 0 0 10px;
+      width: auto;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+
+        img {
+          vertical-align: middle;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .buttonBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        top: inherit;
+        right: inherit;
+        bottom: 4%;
+        left: 0;
+        padding: 0 4%;
+        width: 100%;
+        height: max-content;
+        opacity: 0;
+        z-index: 2;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+
+        .cart {
+          display: block;
+          flex: 1;
+          padding: 5% 0;
+          width: 30px;
+          height: 16px;
+          border: 1px solid $border-gray;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.1em;
+          z-index: 1;
+          background-color: #fff;
+          color: $font-black2;
+          transition: all 0.3s;
+          cursor: pointer;
+
+          &::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            content: 'Quick Add';
+            transform: translate(-50%, -50%);
+            text-align: center;
+            letter-spacing: 0;
+            font-weight: 500;
+            color: $font-black;
+          }
+        }
+
+        &:hover > span {
+          color: $font-black2;
+          border-color: $font-black2;
+        }
+      }
+
+      &:hover > .buttonBox {
+        opacity: 1;
+      }
+    }
+
+    .description {
+      position: relative;
+      margin: 24px 0 0;
+      line-height: 1;
+      font-size: 12px;
+      text-align: left;
+      white-space: normal;
+
+      .name {
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a {
+          font-size: 13px;
+          color: #000;
+          text-decoration: none;
+
+          span {
+            line-height: 20px;
+            font-size: 13px !important;
+            font-weight: 500;
+            color: $font-black !important;
+          }
+        }
+      }
+
+      .spec {
+        margin: 0;
+        font-size: 0;
+
+        li {
+          margin: 0;
+          line-height: 1;
+
+          span {
+            font-size: 13px !important;
+            line-height: 20px;
+          }
+        }
+
+        .discountRate {
+          display: inline-block;
+        }
+
+        .salePrice {
+          display: inline-block;
+          margin-top: 16px;
+          margin-right: 8px;
+
+          span {
+            font-weight: 600;
+            color: $font-black !important;
+          }
+        }
+
+        .originalPrice {
+          display: inline-block;
+
+          span {
+            font-weight: 400 !important;
+            color: $font-gray2 !important;
+            text-decoration-line: line-through;
+          }
+        }
+
+        .color {
+          margin-top: 20px;
+
+          .itemColorSpan {
+            font-size: 0 !important;
+            line-height: 1;
+
+            .itemColor {
+              display: inline-block;
+              margin: 0;
+              max-width: 190px;
+              line-height: 1;
+              overflow: hidden;
+
+              .colorChips {
+                display: inline-block;
+                margin: 0 4px 0;
+                width: 14px;
+                height: 8px;
+                border: 1px solid $border-gray;
+                background-color: $gold-color; // 색깔 지정
+              }
+
+              .colorChips:first-child {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+
+      & .discountRate {
+        display: none;
+        margin-right: 8px;
+        margin-top: 16px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 20px;
+        color: $discount-rate;
+      }
+    }
+  }
+}

@@ -5,10 +5,18 @@
   padding: 0;
   transition: none;
   height: auto;
-  border-bottom: 1px solid $border-gray2;
-  // border: 0;
+  border: 0;
   z-index: 1001;
   background-color: #fff;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $border-gray2;
+    z-index: 1001;
+  }
 
   .inner {
     position: relative;
